@@ -11,7 +11,7 @@ class CDRViewSet(ModelViewSet):
     permission_classes = [IsAuthenticated, ]
     http_method_names = ['get', 'post', 'delete']
     filter_backends = (filters.DjangoFilterBackend, )
-    filterset_fields = ('created', 'calling_number', 'called_number')
+    filterset_fields = ('created', 'calling_number', 'called_number', 'status')
 
     def retrieve(self, request, *args, **kwargs):
         return super().retrieve(request, *args, **kwargs)
